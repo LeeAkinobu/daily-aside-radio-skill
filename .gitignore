@@ -15,3 +15,6 @@ attempts.json
 
 .agents/
 .claude/
+
+# Sample episodes served by GitHub Pages
+!docs/audio/*.mp3

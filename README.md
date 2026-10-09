@@ -14,22 +14,22 @@
 
 <p align="center">
   <b>English</b> · <a href="README.ja.md">日本語</a> &nbsp;|&nbsp;
-  <a href="#listen">Listen</a> · <a href="#how-it-works">How it works</a> · <a href="#installation">Install</a> · <a href="#making-a-programme">Make a programme</a> · <a href="examples/README.md">Examples</a>
+  <a href="https://leeakinobu.github.io/daily-aside-radio-skill/">▶ Listen</a> · <a href="#how-it-works">How it works</a> · <a href="#installation">Install</a> · <a href="#making-a-programme">Make a programme</a> · <a href="examples/README.md">Examples</a>
 </p>
 
 The Daily Aside is an agent skill for [Claude Code](https://code.claude.com/docs/en/skills) and [Codex](https://learn.chatgpt.com/docs/build-skills). It turns a few notes and fresh public sources into an unhurried personal radio programme: a finished MP3 with music already mixed in, plus a WAV master, the script, a timestamped source list, and music credits. No player website is required.
 
 ## Listen
 
-Two real episodes made with this skill on 2026-10-09, untouched after generation. Click a waveform to play or download the MP3.
+Two real episodes made with this skill on 2026-10-09, untouched after generation. Click a waveform to open the player page, or download the MP3s from the [v0.1.0 release](https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/tag/v0.1.0).
 
-<a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/download/v0.1.0/daily-aside-2026-10-09-en.mp3"><img src="docs/img/waveform-en.png" alt="Play the English episode" width="100%"></a>
+<a href="https://leeakinobu.github.io/daily-aside-radio-skill/#en"><img src="docs/img/waveform-en.png" alt="Play the English episode" width="100%"></a>
 
 **English · 7:34 · voice Sulafat** — World Post Day, the 2026 Nobel Prizes in Physics and Literature, World Mental Health Day. [Script and sources](examples/2026-10-09-en/)
 
 > A whole block of polar ice, listening patiently for something that almost never speaks.
 
-<a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/download/v0.1.0/daily-aside-2026-10-09-ja.mp3"><img src="docs/img/waveform-ja.png" alt="Play the Japanese episode" width="100%"></a>
+<a href="https://leeakinobu.github.io/daily-aside-radio-skill/#ja"><img src="docs/img/waveform-ja.png" alt="Play the Japanese episode" width="100%"></a>
 
 **日本語 · 7:35 · voice Nika** — 寒露と世界郵便デー、対数的超高速カメラ、国語に関する世論調査、家族ケアと心の距離。[台本と出典](examples/2026-10-09-ja/)
 

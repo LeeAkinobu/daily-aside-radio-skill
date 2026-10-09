@@ -14,22 +14,22 @@
 
 <p align="center">
   <a href="README.md">English</a> · <b>日本語</b> &nbsp;|&nbsp;
-  <a href="#聴いてみる">聴いてみる</a> · <a href="#仕組み">仕組み</a> · <a href="#インストール">インストール</a> · <a href="#番組を作る">番組を作る</a> · <a href="examples/README.md">サンプル</a>
+  <a href="https://leeakinobu.github.io/daily-aside-radio-skill/">▶ 聴いてみる</a> · <a href="#仕組み">仕組み</a> · <a href="#インストール">インストール</a> · <a href="#番組を作る">番組を作る</a> · <a href="examples/README.md">サンプル</a>
 </p>
 
 The Daily Aside は [Claude Code](https://code.claude.com/docs/en/skills) と [Codex](https://learn.chatgpt.com/docs/build-skills) 向けのエージェントスキルです。いくつかのメモと新しい公開情報から、ゆったりしたパーソナルラジオ番組を作ります。出力は、音楽をミックス済みの MP3、WAV マスター、台本、取得時刻付きの出典一覧、音楽クレジット。再生用のウェブサイトは不要です。
 
 ## 聴いてみる
 
-2026 年 10 月 9 日にこのスキルで実際に制作した 2 本のエピソードです。生成後は無編集。波形をクリックすると MP3 を再生またはダウンロードできます。
+2026 年 10 月 9 日にこのスキルで実際に制作した 2 本のエピソードです。生成後は無編集。波形をクリックするとプレイヤーページが開きます。MP3 のダウンロードは [v0.1.0 リリース](https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/tag/v0.1.0)から。
 
-<a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/download/v0.1.0/daily-aside-2026-10-09-ja.mp3"><img src="docs/img/waveform-ja.png" alt="日本語エピソードを再生" width="100%"></a>
+<a href="https://leeakinobu.github.io/daily-aside-radio-skill/#ja"><img src="docs/img/waveform-ja.png" alt="日本語エピソードを再生" width="100%"></a>
 
 **日本語 · 7:35 · ボイス Nika** — 寒露と世界郵便デー、対数的超高速カメラ、国語に関する世論調査、家族ケアと心の距離。[台本と出典](examples/2026-10-09-ja/)
 
 > 「瞬間」と「その後」を、一枚の流れとして見る。なんだか、物語の書き方にも似ていますね。
 
-<a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/download/v0.1.0/daily-aside-2026-10-09-en.mp3"><img src="docs/img/waveform-en.png" alt="英語エピソードを再生" width="100%"></a>
+<a href="https://leeakinobu.github.io/daily-aside-radio-skill/#en"><img src="docs/img/waveform-en.png" alt="英語エピソードを再生" width="100%"></a>
 
 **English · 7:34 · ボイス Sulafat** — 世界郵便デー、2026 年ノーベル物理学賞・文学賞、世界メンタルヘルスデー。[Script and sources](examples/2026-10-09-en/)
 
