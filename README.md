@@ -77,7 +77,34 @@ No music, credentials, or account information are distributed with the skill fol
 
 ## Installation
 
-Clone this repository, then copy `skills/daily-aside/` into a skill discovery folder. The copy command refuses to overwrite an existing destination.
+### One-command install
+
+**Claude Code** (2.1.275 or later), inside a session:
+
+```
+/plugin install daily-aside --marketplace LeeAkinobu/daily-aside-radio-skill
+```
+
+or from your shell:
+
+```sh
+claude plugin marketplace add LeeAkinobu/daily-aside-radio-skill
+claude plugin install daily-aside@daily-aside
+```
+
+The skill is then available in every project as `/daily-aside:daily-aside`, and `claude plugin update daily-aside@daily-aside` fetches new releases.
+
+**Codex**, inside a session, using the built-in skill installer:
+
+```
+$skill-installer install https://github.com/LeeAkinobu/daily-aside-radio-skill/tree/main/skills/daily-aside
+```
+
+This copies the skill to `~/.codex/skills/daily-aside`, after which `$daily-aside` works in every project.
+
+### Manual install
+
+If you prefer a copy you control, clone this repository and copy `skills/daily-aside/` into a skill discovery folder. The copy command refuses to overwrite an existing destination.
 
 ```sh
 git clone https://github.com/LeeAkinobu/daily-aside-radio-skill.git
@@ -144,7 +171,7 @@ Then review the script, confirm your paid or unpaid service tier, and run the pr
 
 ### Narration and spending
 
-The bundled Google client generates one section at a time. It reuses verified successful audio, records each attempt before sending, never automatically retries an unknown request, and refuses a request that would exceed a local estimated-cost limit. The local estimate is conservative and is not a guarantee of the provider's final invoice, and it cannot limit other applications using the same account. Check current provider pricing and use the provider's billing controls as well.
+Recommended voices: **Nika** for Japanese and **Sulafat** for English, both verified with `gemini-3.8-flash-tts` and used for the sample episodes. The bundled Google client generates one section at a time. It reuses verified successful audio, records each attempt before sending, never automatically retries an unknown request, and refuses a request that would exceed a local estimated-cost limit. The local estimate is conservative and is not a guarantee of the provider's final invoice, and it cannot limit other applications using the same account. Check current provider pricing and use the provider's billing controls as well.
 
 Never paste a key into an assistant chat, source file, command-line argument, issue, or output document. Configure it through Google's own [API-key instructions](https://ai.google.dev/gemini-api/docs/api-key). An assistant must respect its host's credential-handling rules and may need to hand the authenticated step to the user.
 
@@ -169,6 +196,7 @@ Keep generated episodes and caches private. Sharing the skill does not share any
 
 - Offline and mocked-provider tests cover timing, format handling, cache integrity, duplicate-request guards, unknown-outcome handling, cost-estimate checks, redirects, and credential-free reuse.
 - A live end-to-end run was completed on 2026-10-09 with `gemini-3.8-flash-tts` through `generateContent`: an English episode (969 words, voice Sulafat) and a Japanese episode (2101 characters, voice Nika) each produced about 7 minutes 35 seconds of finished audio, decoded cleanly, and passed a listening check by the author. The presets were set from those measurements.
+- The installed skill was exercised end to end from a fresh Claude Code session on 2026-10-09 (`/daily-aside`, offline tests, then episode preparation) without the author's intervention.
 - Provider models, voices, prices, and request formats change. Recheck the official documentation linked in `references/tts.md` before live use.
 
 ## Repository layout

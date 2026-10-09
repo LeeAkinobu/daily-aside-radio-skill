@@ -15,6 +15,7 @@ distributable; the repository root holds the README, license and `SHA256SUMS`.
 - `skills/daily-aside/scripts/google_tts.py` — user-run Gemini TTS client. Never executed by tests or agents.
 - `skills/daily-aside/references/` — editorial format, episode JSON schema, TTS boundary, audio rules.
 - `examples/` — finished sample episodes (metadata only; the MP3s are release assets). Do not regenerate or edit them casually.
+- `.claude-plugin/` — plugin and marketplace manifests; the repository root is the plugin. Bump `version` in both files on release.
 - `README.md` and `README.ja.md` — keep both in sync when changing user-facing text.
 
 ## Commands

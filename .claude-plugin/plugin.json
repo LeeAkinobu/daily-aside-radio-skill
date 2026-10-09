@@ -1,0 +1,10 @@
+{
+  "name": "daily-aside",
+  "version": "0.1.0",
+  "description": "The Daily Aside: a personal radio show for your day, narrated in your own TTS voice with music mixed in.",
+  "author": { "name": "Akinobu Lee" },
+  "homepage": "https://leeakinobu.github.io/daily-aside-radio-skill/",
+  "repository": "https://github.com/LeeAkinobu/daily-aside-radio-skill",
+  "license": "MIT",
+  "keywords": ["radio", "text-to-speech", "gemini", "ffmpeg", "podcast"]
+}

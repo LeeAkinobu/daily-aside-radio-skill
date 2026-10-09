@@ -12,7 +12,7 @@ For the previously evaluated Gemini 3.8 Flash TTS route, ordinary generation ret
 
 The importer accepts provider response JSON or an ordered JSON list of streaming events, not raw SSE text. An integration must preserve event order and remove SSE framing first. Never treat an interrupted stream as a complete chunk.
 
-Generated request plans use contents[].parts[].speech_metadata.style and generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName. Do not put style instructions in speech text. Voice names must be selected from the user's actual supported model. A previously preferred custom/library voice may be unavailable to other accounts.
+Generated request plans use contents[].parts[].speech_metadata.style and generationConfig.speechConfig.voiceConfig.prebuiltVoiceConfig.voiceName. Do not put style instructions in speech text. Voice names must be selected from the user's actual supported model. Recommended defaults, verified on 2026-10-09: Nika for Japanese, Sulafat for English; both are prebuilt voices of gemini-3.8-flash-tts and were used for the sample episodes. A previously preferred custom/library voice may be unavailable to other accounts.
 
 The 4096 output-token cap per chunk is a quality/cost guard, not a provider-wide monetary limit. Reconfirm current pricing and give an episode-level estimate and cap before generation. All retries count toward the cap, including requests with lost responses. Price limits require the executing integration's own enforcement and user-approved billing controls; a local attempt log cannot cap usage by other apps. Do not hard-code a promise of a particular total cost.
 

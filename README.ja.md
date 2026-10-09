@@ -77,7 +77,34 @@ TTS リクエスト以外はすべてオフラインで、Python 標準ライブ
 
 ## インストール
 
-リポジトリを clone し、`skills/daily-aside/` をスキル検出フォルダにコピーします。コピーコマンドは既存のコピーを上書きしません。
+### ワンコマンドでインストール
+
+**Claude Code**（2.1.275 以降）のセッション内で：
+
+```
+/plugin install daily-aside --marketplace LeeAkinobu/daily-aside-radio-skill
+```
+
+またはシェルから：
+
+```sh
+claude plugin marketplace add LeeAkinobu/daily-aside-radio-skill
+claude plugin install daily-aside@daily-aside
+```
+
+以後、どのプロジェクトでも `/daily-aside:daily-aside` で使えます。更新は `claude plugin update daily-aside@daily-aside` です。
+
+**Codex** のセッション内で、組み込みのスキルインストーラを使って：
+
+```
+$skill-installer install https://github.com/LeeAkinobu/daily-aside-radio-skill/tree/main/skills/daily-aside
+```
+
+`~/.codex/skills/daily-aside` にコピーされ、以後どのプロジェクトでも `$daily-aside` が使えます。
+
+### 手動でインストール
+
+自分で管理するコピーが欲しい場合は、リポジトリを clone し、`skills/daily-aside/` をスキル検出フォルダにコピーします。コピーコマンドは既存のコピーを上書きしません。
 
 ```sh
 git clone https://github.com/LeeAkinobu/daily-aside-radio-skill.git
@@ -144,7 +171,7 @@ python3 scripts/radio.py dry-run --out /path/to/new-test-output
 
 ### ナレーションと支出
 
-同梱の Google クライアントは 1 セクションずつ生成します。成功した音声は再利用し、送信前に各試行を記録し、結果不明のリクエストを自動で再試行せず、ローカルの見積上限を超えるリクエストを拒否します。ローカルの見積は保守的ですが、プロバイダの最終請求を保証するものではなく、同じアカウントを使う他のアプリの利用を制限することもできません。プロバイダの現在の料金を確認し、プロバイダ側の課金管理も併用してください。
+推奨ボイスは日本語が **Nika**、英語が **Sulafat** です。どちらも `gemini-3.8-flash-tts` で検証済みで、サンプルエピソードに使っています。同梱の Google クライアントは 1 セクションずつ生成します。成功した音声は再利用し、送信前に各試行を記録し、結果不明のリクエストを自動で再試行せず、ローカルの見積上限を超えるリクエストを拒否します。ローカルの見積は保守的ですが、プロバイダの最終請求を保証するものではなく、同じアカウントを使う他のアプリの利用を制限することもできません。プロバイダの現在の料金を確認し、プロバイダ側の課金管理も併用してください。
 
 API キーをアシスタントのチャット、ソースファイル、コマンドライン引数、issue、出力ドキュメントに貼り付けないでください。Google の [API キーの手順](https://ai.google.dev/gemini-api/docs/api-key)に従って設定してください。アシスタントはホストの認証情報の扱いに従う必要があり、認証を伴うステップをユーザに委ねることがあります。
 
@@ -169,6 +196,7 @@ API キーをアシスタントのチャット、ソースファイル、コマ�
 
 - オフラインテストとモックプロバイダのテストで、タイミング、フォーマット処理、キャッシュの整合性、重複リクエストの防止、結果不明時の扱い、費用見積の検査、リダイレクト、認証情報なしでの再利用を検証しています。
 - 2026 年 10 月 9 日に `gemini-3.8-flash-tts` を `generateContent` 経由で使ったエンドツーエンドの実行を完了しました。英語版（969 語、ボイス Sulafat）と日本語版（2101 文字、ボイス Nika）がそれぞれ約 7 分 35 秒の完成音声になり、正常にデコードでき、作者の聴感チェックを通過しています。プリセットはこの計測結果から設定しました。
+- 2026 年 10 月 9 日、インストール済みのスキルを新規の Claude Code セッションから `/daily-aside` で起動し、オフラインテストからエピソード準備までを作者の介入なしに通しました。
 - プロバイダのモデル、ボイス、料金、リクエスト形式は変わります。実行前に `references/tts.md` にある公式ドキュメントを確認してください。
 
 ## リポジトリ構成

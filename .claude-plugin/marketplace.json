@@ -1,0 +1,14 @@
+{
+  "name": "daily-aside",
+  "description": "The Daily Aside radio skill",
+  "owner": { "name": "Akinobu Lee" },
+  "plugins": [
+    {
+      "name": "daily-aside",
+      "source": "./",
+      "description": "A personal radio show for your day, with room to wander. Researched script, your own TTS voice, music mixed in.",
+      "version": "0.1.0",
+      "category": "productivity"
+    }
+  ]
+}

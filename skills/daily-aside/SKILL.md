@@ -23,7 +23,7 @@ Check whether the Google service is paid or unpaid. Do not send personal or conf
 
 Before sending text for TTS, disclose the provider, the exact material sent, selected supported voice/model, price estimate, currency and total spending limit. Apply the host assistant's current approval and sensitive-data rules. Permission to read a connected inbox is not permission to send its contents to a TTS service. Minimize or omit sensitive material. Obtain required permission for transmission. Keep API credentials out of chats, scripts, command lines, episode files, logs, and the shared skill. The user must set up credentials through their supported secure flow.
 
-Keep the preferred voice when supported. If it cannot be verified, ask for a supported alternative; do not silently change the established voice. Never copy another user's approval or account into this workflow.
+Recommended voices, verified live on 2026-10-09 with gemini-3.8-flash-tts: Japanese programmes default to **Nika**; English programmes default to **Sulafat**. Propose the recommended voice for the programme language unless the user has an established preference. Keep the preferred voice when supported. If it cannot be verified, ask for a supported alternative; do not silently change the established voice. Never copy another user's approval or account into this workflow.
 
 ### User-run Google client
 
