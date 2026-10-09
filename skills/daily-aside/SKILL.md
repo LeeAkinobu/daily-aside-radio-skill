@@ -9,10 +9,11 @@ Produce an audio file the user can play anywhere. Resolve bundled scripts/ and r
 
 ## Establish the episode
 
-1. Confirm the user's date/time zone, coarse weather location when needed, preferred programme/DJ names, mood, and the personal information they want included. Infer only from information they supplied for this task or sources they authorized. Do not require work information.
-2. Use `references/editorial.md` for the five-part format. Research fresh claims in primary sources and record an HTTPS source plus a timezone-aware retrieval timestamp. Do not invent inaccessible task/calendar information.
-3. Choose the programme language and locale (English by default). Create an episode JSON following `references/episode-format.md`. Make names and delivery style configurable. Default to a generic unnamed host; do not embed a real person's likeness, proprietary agent name, or personal project details.
-4. Run `python3 scripts/radio.py validate EPISODE.json`. Use the language-specific spoken budget: English defaults to 850–1050 words, Japanese to 1950–2250 characters excluding whitespace and pause tags. These are pacing presets, not interchangeable units. Other languages require an explicit speechBudget. Exactly five segments are required.
+1. Confirm the user's date/time zone, coarse weather location when needed, preferred programme/DJ names, and mood.
+2. Always ask what personal material the episode should carry before writing. This programme is made for one listener, so offer the choice every time rather than waiting to be told: (a) a few lines they type now about their day, week, work, or mood; (b) a connected source they explicitly authorize for this episode, such as a calendar or task list, with the understanding that reading it does not by itself permit sending its contents to a TTS provider; (c) nothing personal, public topics only. Record the answer in config.contentClass. Use only what they supplied or authorized; never look for personal information on your own, and never require it.
+3. Use `references/editorial.md` for the five-part format. Research fresh claims in primary sources and record an HTTPS source plus a timezone-aware retrieval timestamp. Do not invent inaccessible task/calendar information.
+4. Choose the programme language and locale (English by default). Create an episode JSON following `references/episode-format.md`. Make names and delivery style configurable. Default to a generic unnamed host; do not embed a real person's likeness, proprietary agent name, or personal project details.
+5. Run `python3 scripts/radio.py validate EPISODE.json`. Use the language-specific spoken budget: English defaults to 850–1050 words, Japanese to 1950–2250 characters excluding whitespace and pause tags. These are pacing presets, not interchangeable units. Other languages require an explicit speechBudget. Exactly five segments are required.
 
 ## Obtain narration safely
 

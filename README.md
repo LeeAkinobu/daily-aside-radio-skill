@@ -125,7 +125,7 @@ Offline first:
 
 > Run the offline regression tests and synthetic audio dry run for The Daily Aside. Do not read credentials, make network requests, generate paid speech, install software, or publish anything. Put test outputs in a new private directory outside the skill. Report any failures and which checks you did not perform.
 
-Prepare an episode without spending:
+Prepare an episode without spending. The skill will first ask what personal material to include; answer with a few lines, authorize a source, or say public topics only:
 
 > Prepare a roughly eight-minute episode of The Daily Aside in English, locale en-US, using public information only. Use today's date and ask for a coarse weather location if needed. Include science, culture, everyday life, and one thought for tomorrow. Save the five-part episode JSON, script and timestamped primary sources in a private output directory. Check which Gemini model and voice I can actually use, explain current pricing, and prepare the exact local generation command. Do not read my API key or call the paid API. Stop for my review of the script, voice, service tier, BGM rights and total spending limit.
 
