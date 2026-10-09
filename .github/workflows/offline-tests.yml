@@ -1,0 +1,32 @@
+name: offline-tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install ffmpeg
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+      - name: Verify checksums
+        run: sha256sum -c SHA256SUMS
+      - name: Offline regression tests
+        working-directory: skills/daily-aside
+        env:
+          GEMINI_API_KEY: ""
+        run: |
+          python3 scripts/test_radio.py
+          python3 scripts/test_google_tts.py
+      - name: Synthetic dry run
+        working-directory: skills/daily-aside
+        run: python3 scripts/radio.py dry-run --out "$RUNNER_TEMP/dryrun"

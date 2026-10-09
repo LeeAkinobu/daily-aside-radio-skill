@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security problem (approval bypass, credential leak, cost cap bypass)
+    url: https://github.com/LeeAkinobu/daily-aside-radio-skill/security/advisories/new
+    about: Please report these privately, not as a public issue.
