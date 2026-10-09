@@ -2,6 +2,8 @@
 
 A personal radio show for your day, with room to wander.
 
+English | [日本語](README.ja.md)
+
 The Daily Aside is an agent skill for [Claude Code](https://code.claude.com/docs/en/skills) and [Codex](https://learn.chatgpt.com/docs/build-skills). It turns a few notes and fresh public sources into an unhurried personal radio programme: a finished MP3 with music already mixed in, plus a WAV master, the script, a timestamped source list, and music credits. No player website is required.
 
 ## What it makes
@@ -23,6 +25,8 @@ Work updates are optional and take no more than 30–40% of a programme. The Eng
 
 Everything except the TTS request runs offline on the standard Python library plus ffmpeg.
 
+Two finished sample episodes (English and Japanese, about seven and a half minutes each) are in [examples/](examples/README.md).
+
 ## Requirements
 
 - An assistant that supports folder-based skills, or a Python command-line workflow
@@ -30,7 +34,7 @@ Everything except the TTS request runs offline on the standard Python library pl
 - A Google Gemini TTS model and voice with the user's own credentials and billing, or an approved TTS integration, or existing narration WAVs
 - A music file the user is entitled to use, with attribution information
 
-No music, credentials, episodes, or account information are distributed with the skill. Installing the skill does not configure a TTS account or approve its charges.
+No music, credentials, or account information are distributed with the skill folder. Installing the skill does not configure a TTS account or approve its charges.
 
 ## Installation
 
@@ -124,6 +128,7 @@ Keep generated episodes and caches private. Sharing the skill does not share any
 - `skills/daily-aside/SKILL.md`: the instructions an agent follows
 - `skills/daily-aside/scripts/`: `radio.py` (validate, plan, import, mix), `google_tts.py` (user-run client), and the tests
 - `skills/daily-aside/references/`: editorial format, episode JSON schema, TTS boundary, audio rules
+- `examples/`: finished sample episodes with scripts, sources, and credits
 - `SHA256SUMS`: checksums of every tracked file
 - `CLAUDE.md`: guidance for coding agents working on this repository
 

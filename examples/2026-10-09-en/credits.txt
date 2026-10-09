@@ -1,0 +1,5 @@
+title: Continue Life
+creator: Kevin MacLeod (incompetech.com)
+source: Official track page https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100282 (ISRC USUAN1100282); file https://incompetech.com/music/royalty-free/mp3-royaltyfree/Continue%20Life.mp3 retrieved 2026-10-09T14:18+09:00 by the owner, SHA-256 f75617ff7960e7f1cd3f583b103f1b812faaf1375d66a5b7a604f2fe2112a536
+license: Licensed under Creative Commons: By Attribution 4.0 License, https://creativecommons.org/licenses/by/4.0/ (as stated on the official track page, checked 2026-10-09T14:12+09:00)
+changes: Looped, level-adjusted, ducked under narration, faded and mixed with narration
