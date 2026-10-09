@@ -42,7 +42,7 @@ def validate_episode(e):
     for field in ('programmeName','djName'):
         if field in config and (not isinstance(config[field],str) or len(config[field])>120): raise ValueError(f'Invalid {field}.')
     clean=' '.join(re.sub(r'<short pause>|<long pause>', '', x) for x in parts)
-    defaults={'unit':'characters','min':2300,'max':2600} if language.startswith('ja') else {'unit':'words','min':850,'max':1050}
+    defaults={'unit':'characters','min':1950,'max':2250} if language.startswith('ja') else {'unit':'words','min':850,'max':1050}
     if not language.startswith(('en','ja')) and 'speechBudget' not in config:
         raise ValueError('Provide an explicit speechBudget for this language.')
     budget=config.get('speechBudget',defaults)

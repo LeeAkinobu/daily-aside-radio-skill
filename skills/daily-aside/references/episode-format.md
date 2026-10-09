@@ -4,7 +4,7 @@ Episode JSON fields:
 - title: nonempty title
 - date: YYYY-MM-DD in the user's time zone
 - config: optional object with programmeName, djName, deliveryStyle, language, locale (strings); language defaults to en. Optional speechBudget is {"unit":"words" or "characters","min":integer,"max":integer}. Names are editorial guidance and must also appear in the approved script if they should be spoken.
-- segments: exactly five strings. English preset: 850–1050 words; Japanese preset: 2300–2600 spoken characters. Other languages require an explicit speechBudget
+- segments: exactly five strings. English preset: 850–1050 words; Japanese preset: 1950–2250 spoken characters. Other languages require an explicit speechBudget
 - config.contentClass: public, personal or confidential; default personal. Unpaid Gemini services accept only reviewed public-only material. This is a safety declaration, not automatic anonymization.
 - sources: one or more objects with label, credential-free HTTPS url, and checkedAt (ISO 8601 timestamp with time zone)
 

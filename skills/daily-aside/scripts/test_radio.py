@@ -6,7 +6,7 @@ spec=importlib.util.spec_from_file_location('radio',pathlib.Path(__file__).with_
 r=importlib.util.module_from_spec(spec); spec.loader.exec_module(r)
 
 def episode(language='en'):
-    text='word '*180 if language=='en' else 'あ'*470
+    text='word '*180 if language=='en' else 'あ'*420
     return {'title':'Synthetic test only','date':'2026-10-09','config':{'language':language},'segments':[text]*5,
             'sources':[{'label':'Reserved example domain, fixture only','url':'https://example.com/','checkedAt':'2026-10-09T00:00:00Z'}]}
 
@@ -21,7 +21,7 @@ def response(raw,mime='audio/wav',finish='STOP'):
 class RadioTests(unittest.TestCase):
     def test_language_budgets(self):
         self.assertEqual(r.validate_episode(episode())['count'],900)
-        self.assertEqual(r.validate_episode(episode('ja'))['count'],2350)
+        self.assertEqual(r.validate_episode(episode('ja'))['count'],2100)
         e=episode('ja'); e['config']['language']='en'
         with self.assertRaises(ValueError): r.validate_episode(e)
         e=episode(); e['config']['language']='fr'

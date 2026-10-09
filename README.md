@@ -12,7 +12,7 @@ Turn a few notes and fresh public sources into an unhurried personal radio progr
 - English by default; configurable language, locale, programme name, DJ name, and delivery style
 - Roughly eight minutes as a starting point, with actual duration measured after generation
 
-Work updates are optional and take no more than 30–40% of a programme. The English preset is 850–1050 words; Japanese has its own 2300–2600-character preset. Other languages can supply an explicit spoken-text budget.
+Work updates are optional and take no more than 30–40% of a programme. The English preset is 850–1050 words; Japanese has its own 1950–2250-character preset. Other languages can supply an explicit spoken-text budget.
 
 ## Requirements
 
