@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+cache/
+outputs/
+work/
+*.wav
+*.mp3
+*.pcm
+request-*.json
+response-*.json
+attempts.json
+
+.agents/
+.claude/
