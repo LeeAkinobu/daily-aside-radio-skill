@@ -1,12 +1,41 @@
-# The Daily Aside
+<p align="center">
+  <img src="docs/img/hero.svg" alt="The Daily Aside" width="100%">
+</p>
 
-一日のための、寄り道のあるパーソナルラジオ番組。
+<p align="center">
+  <a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/LeeAkinobu/daily-aside-radio-skill?color=d97b4a&label=release"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/LeeAkinobu/daily-aside-radio-skill?color=3a2a22"></a>
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white">
+  <img alt="ffmpeg" src="https://img.shields.io/badge/ffmpeg-required-007808?logo=ffmpeg&logoColor=white">
+  <img alt="Offline tests" src="https://img.shields.io/badge/offline%20tests-21%20passing-brightgreen">
+  <img alt="Claude Code skill" src="https://img.shields.io/badge/Claude%20Code-skill-cc785c">
+  <img alt="Codex skill" src="https://img.shields.io/badge/Codex-skill-10a37f">
+</p>
 
-[English](README.md) | 日本語
+<p align="center">
+  <a href="README.md">English</a> · <b>日本語</b> &nbsp;|&nbsp;
+  <a href="#聴いてみる">聴いてみる</a> · <a href="#仕組み">仕組み</a> · <a href="#インストール">インストール</a> · <a href="#番組を作る">番組を作る</a> · <a href="examples/README.md">サンプル</a>
+</p>
 
 The Daily Aside は [Claude Code](https://code.claude.com/docs/en/skills) と [Codex](https://learn.chatgpt.com/docs/build-skills) 向けのエージェントスキルです。いくつかのメモと新しい公開情報から、ゆったりしたパーソナルラジオ番組を作ります。出力は、音楽をミックス済みの MP3、WAV マスター、台本、取得時刻付きの出典一覧、音楽クレジット。再生用のウェブサイトは不要です。
 
-実際に制作したサンプル（英語・日本語、各 7 分半）は [examples/](examples/README.md) にあります。
+## 聴いてみる
+
+2026 年 10 月 9 日にこのスキルで実際に制作した 2 本のエピソードです。生成後は無編集。波形をクリックすると MP3 を再生またはダウンロードできます。
+
+<a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/download/v0.1.0/daily-aside-2026-10-09-ja.mp3"><img src="docs/img/waveform-ja.png" alt="日本語エピソードを再生" width="100%"></a>
+
+**日本語 · 7:35 · ボイス Nika** — 寒露と世界郵便デー、対数的超高速カメラ、国語に関する世論調査、家族ケアと心の距離。[台本と出典](examples/2026-10-09-ja/)
+
+> 「瞬間」と「その後」を、一枚の流れとして見る。なんだか、物語の書き方にも似ていますね。
+
+<a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/download/v0.1.0/daily-aside-2026-10-09-en.mp3"><img src="docs/img/waveform-en.png" alt="英語エピソードを再生" width="100%"></a>
+
+**English · 7:34 · ボイス Sulafat** — 世界郵便デー、2026 年ノーベル物理学賞・文学賞、世界メンタルヘルスデー。[Script and sources](examples/2026-10-09-en/)
+
+> A whole block of polar ice, listening patiently for something that almost never speaks.
+
+音楽はどちらも Kevin MacLeod「Continue Life」（incompetech.com、CC BY 4.0）。
 
 ## 作られるもの
 
@@ -25,7 +54,17 @@ The Daily Aside は [Claude Code](https://code.claude.com/docs/en/skills) と [C
 3. ユーザが自分の Google Gemini TTS アカウントで、同梱の `google_tts.py` を自分で実行してナレーションを生成します。1 セクションずつ、明示した支出上限のもとで動きます。既存のナレーション WAV や、承認済みの別 TTS 連携からの取り込みも可能です。
 4. `radio.py mix` がナレーションとユーザ自身の音楽を `episode.mp3` と `episode.wav` に合成します。ダッキング、固定長の間奏、フェードを施し、クレジットを書き出します。
 
-TTS リクエスト以外はすべてオフラインで、Python 標準ライブラリと ffmpeg だけで動きます。
+```mermaid
+flowchart LR
+    A[あなたのメモ +<br>新しい公開情報] --> B[五部構成の台本<br>episode.json]
+    B --> C{radio.py validate}
+    C --> D[google_tts.py<br>ユーザ自身が実行、1 セクションずつ、<br>支出上限つき]
+    D --> E[(検証済み<br>ナレーションキャッシュ)]
+    E --> F[radio.py mix<br>+ あなたの音楽]
+    F --> G[episode.mp3 · episode.wav<br>台本 · 出典 · クレジット]
+```
+
+TTS リクエスト以外はすべてオフラインで、Python 標準ライブラリと ffmpeg だけで動きます。実際に制作したサンプルは [examples/](examples/README.md) にあります。
 
 ## 必要なもの
 

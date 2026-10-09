@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="The Daily Aside">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f1a17"/>
+      <stop offset="1" stop-color="#3a2a22"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#d97b4a"/>
+      <stop offset="1" stop-color="#f2b27a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="24" fill="url(#bg)"/>
+  <g fill="url(#bar)" opacity="0.95">
+    <rect x="760" y="170" width="14" height="60" rx="7"/>
+    <rect x="786" y="130" width="14" height="140" rx="7"/>
+    <rect x="812" y="95" width="14" height="210" rx="7" transform="translate(0,-30)"/>
+    <rect x="838" y="150" width="14" height="100" rx="7"/>
+    <rect x="864" y="110" width="14" height="180" rx="7" transform="translate(0,-20)"/>
+    <rect x="890" y="160" width="14" height="80" rx="7"/>
+    <rect x="916" y="120" width="14" height="160" rx="7" transform="translate(0,-15)"/>
+    <rect x="942" y="175" width="14" height="50" rx="7"/>
+    <rect x="968" y="135" width="14" height="130" rx="7" transform="translate(0,-10)"/>
+    <rect x="994" y="165" width="14" height="70" rx="7"/>
+    <rect x="1020" y="145" width="14" height="110" rx="7"/>
+    <rect x="1046" y="180" width="14" height="40" rx="7"/>
+    <rect x="1072" y="160" width="14" height="80" rx="7"/>
+    <rect x="1098" y="185" width="14" height="30" rx="7"/>
+  </g>
+  <circle cx="110" cy="150" r="54" fill="none" stroke="#f2b27a" stroke-width="6" opacity="0.9"/>
+  <circle cx="110" cy="150" r="30" fill="none" stroke="#f2b27a" stroke-width="6" opacity="0.6"/>
+  <circle cx="110" cy="150" r="8" fill="#f2b27a"/>
+  <text x="200" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#f7efe8">The Daily Aside</text>
+  <text x="203" y="185" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="26" fill="#d9c7b8">A personal radio show for your day, with room to wander.</text>
+  <text x="203" y="230" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#a8927f">Agent skill for Claude Code &amp; Codex · researched script · your own TTS voice · music mixed in</text>
+</svg>

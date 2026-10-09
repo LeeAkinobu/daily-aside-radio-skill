@@ -1,10 +1,41 @@
-# The Daily Aside
+<p align="center">
+  <img src="docs/img/hero.svg" alt="The Daily Aside" width="100%">
+</p>
 
-A personal radio show for your day, with room to wander.
+<p align="center">
+  <a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/LeeAkinobu/daily-aside-radio-skill?color=d97b4a&label=release"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/LeeAkinobu/daily-aside-radio-skill?color=3a2a22"></a>
+  <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white">
+  <img alt="ffmpeg" src="https://img.shields.io/badge/ffmpeg-required-007808?logo=ffmpeg&logoColor=white">
+  <img alt="Offline tests" src="https://img.shields.io/badge/offline%20tests-21%20passing-brightgreen">
+  <img alt="Claude Code skill" src="https://img.shields.io/badge/Claude%20Code-skill-cc785c">
+  <img alt="Codex skill" src="https://img.shields.io/badge/Codex-skill-10a37f">
+</p>
 
-English | [日本語](README.ja.md)
+<p align="center">
+  <b>English</b> · <a href="README.ja.md">日本語</a> &nbsp;|&nbsp;
+  <a href="#listen">Listen</a> · <a href="#how-it-works">How it works</a> · <a href="#installation">Install</a> · <a href="#making-a-programme">Make a programme</a> · <a href="examples/README.md">Examples</a>
+</p>
 
 The Daily Aside is an agent skill for [Claude Code](https://code.claude.com/docs/en/skills) and [Codex](https://learn.chatgpt.com/docs/build-skills). It turns a few notes and fresh public sources into an unhurried personal radio programme: a finished MP3 with music already mixed in, plus a WAV master, the script, a timestamped source list, and music credits. No player website is required.
+
+## Listen
+
+Two real episodes made with this skill on 2026-10-09, untouched after generation. Click a waveform to play or download the MP3.
+
+<a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/download/v0.1.0/daily-aside-2026-10-09-en.mp3"><img src="docs/img/waveform-en.png" alt="Play the English episode" width="100%"></a>
+
+**English · 7:34 · voice Sulafat** — World Post Day, the 2026 Nobel Prizes in Physics and Literature, World Mental Health Day. [Script and sources](examples/2026-10-09-en/)
+
+> A whole block of polar ice, listening patiently for something that almost never speaks.
+
+<a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/releases/download/v0.1.0/daily-aside-2026-10-09-ja.mp3"><img src="docs/img/waveform-ja.png" alt="Play the Japanese episode" width="100%"></a>
+
+**日本語 · 7:35 · voice Nika** — 寒露と世界郵便デー、対数的超高速カメラ、国語に関する世論調査、家族ケアと心の距離。[台本と出典](examples/2026-10-09-ja/)
+
+> 「瞬間」と「その後」を、一枚の流れとして見る。なんだか、物語の書き方にも似ていますね。
+
+Music in both: "Continue Life" by Kevin MacLeod (incompetech.com), CC BY 4.0.
 
 ## What it makes
 
@@ -23,9 +54,17 @@ Work updates are optional and take no more than 30–40% of a programme. The Eng
 3. The user generates narration with their own Google Gemini TTS account by running the bundled `google_tts.py` client themselves, one section at a time, under an explicit spending limit. Existing narration WAVs or another approved TTS integration can be imported instead.
 4. `radio.py mix` renders the narration and the user's own music into `episode.mp3` and `episode.wav`, with ducking, fixed music gaps, and a fade, and writes the credits.
 
-Everything except the TTS request runs offline on the standard Python library plus ffmpeg.
+```mermaid
+flowchart LR
+    A[Your notes +<br>fresh public sources] --> B[Five-part script<br>episode.json]
+    B --> C{radio.py validate}
+    C --> D[google_tts.py<br>run by you, one section at a time,<br>under a spending cap]
+    D --> E[(Verified<br>narration cache)]
+    E --> F[radio.py mix<br>+ your music]
+    F --> G[episode.mp3 · episode.wav<br>script · sources · credits]
+```
 
-Two finished sample episodes (English and Japanese, about seven and a half minutes each) are in [examples/](examples/README.md).
+Everything except the TTS request runs offline on the standard Python library plus ffmpeg. Finished sample episodes are in [examples/](examples/README.md).
 
 ## Requirements
 
