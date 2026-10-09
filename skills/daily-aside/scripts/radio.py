@@ -277,7 +277,9 @@ def render(parts,bgm,out,credit,bgm_gain=.18,calibration_db=0):
             outro=cursor/RATE; dest.write(bytes(RATE*18*8)); cursor+=RATE*18
         cues={'introEnd':10,'gaps':gaps,'outroStart':outro,'duration':cursor/RATE,'fadeStart':cursor/RATE-5}
         music=temp/'music.raw'
-        run(['ffmpeg','-v','error','-protocol_whitelist','file,pipe','-stream_loop','-1','-i',str(bgm),'-t',str(cues['duration']),'-ar',str(RATE),'-ac','2','-f','f32le',str(music)])
+        # Loop decoded samples in the filter graph. Demuxer-level -stream_loop drops encoder-delay samples per
+        # iteration for MP3/AAC sources, so the bed would end short of the required duration.
+        run(['ffmpeg','-v','error','-protocol_whitelist','file,pipe','-i',str(bgm),'-af',f"aloop=loop=-1:size=2147483647,atrim=end={cues['duration']}",'-ar',str(RATE),'-ac','2','-f','f32le',str(music)])
         mix=temp/'mix.raw'; peak=0.0; frame=0; factor=bgm_gain*10**(calibration_db/20)
         with open(voice,'rb') as v,open(music,'rb') as b,open(mix,'wb') as output:
             while raw:=v.read(4096*8):

@@ -111,4 +111,20 @@ class RadioTests(unittest.TestCase):
             self.assertLess(max(abs(x) for x in samples),1)
             with self.assertRaises(ValueError): r.dry_run(out)
 
+    def test_mp3_bgm_loops_to_exact_duration(self):
+        # Regression: -stream_loop on an MP3 bed lost ~46 ms per loop and failed with 'BGM ended unexpectedly'.
+        with tempfile.TemporaryDirectory() as d:
+            d=pathlib.Path(d); parts=[]
+            for i in range(5):
+                wav(d/f'{i}.wav'); parts.append(d/f'{i}.wav')
+            r.run(['ffmpeg','-v','error','-f','lavfi','-i','sine=frequency=440:sample_rate=48000:duration=1.5','-ac','2','-c:a','libmp3lame','-b:a','64k',str(d/'bed.mp3')])
+            credit={'title':'Synthetic MP3 bed','creator':'Generated locally','source':'ffmpeg sine','license':'No external music used','changes':'Looped, ducked, faded; test fixture only'}
+            cues=r.render(parts,d/'bed.mp3',d/'mix',credit)
+            self.assertEqual(cues['duration'],49.25)
+            info=json.loads(r.run(['ffprobe','-v','error','-show_entries','format=duration','-of','json',str(d/'mix/episode.wav')]))
+            self.assertAlmostEqual(float(info['format']['duration']),49.25,places=3)
+            audio=r.run(['ffmpeg','-v','error','-i',str(d/'mix/episode.wav'),'-ss','40','-t','4','-f','f32le','pipe:1'])
+            samples=array.array('f'); samples.frombytes(audio)
+            self.assertGreater(max(abs(x) for x in samples),0.01)  # music bed present in the outro, not silence
+
 if __name__=='__main__': unittest.main(verbosity=2)

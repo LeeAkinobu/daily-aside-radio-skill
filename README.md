@@ -67,7 +67,7 @@ In Codex, start with `$daily-aside`; in Claude Code, start with `/daily-aside`, 
 
 > Run the offline regression tests and synthetic audio dry run for The Daily Aside. Do not read credentials, make network requests, generate paid speech, install software, or publish anything. Put test outputs in a new private directory outside the skill. Confirm that MP3 and WAV include background music, four five-second topic gaps, a ten-second intro, an eighteen-second outro, and the final five-second fade. Label synthetic tones clearly. Report any failures and which checks you did not perform.
 
-Expected: 20 tests pass; the built-in dry run makes approximately 49.25 seconds of synthetic tones and music. This is a timing/format fixture, not a narrated eight-minute programme.
+Expected: 21 tests pass; the built-in dry run makes approximately 49.25 seconds of synthetic tones and music. This is a timing/format fixture, not a narrated eight-minute programme.
 
 ### 2. Prepare the first real episode without spending
 
