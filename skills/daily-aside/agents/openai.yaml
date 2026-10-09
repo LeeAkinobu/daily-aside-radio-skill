@@ -1,0 +1,13 @@
+interface:
+  display_name: The Daily Aside
+  short_description: A personal radio show for your day, with room to wander.
+  default_prompt: Use $daily-aside to make a personal radio show with background music.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
