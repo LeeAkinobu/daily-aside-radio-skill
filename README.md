@@ -103,7 +103,16 @@ python3 -c "import shutil; shutil.copytree('skills/daily-aside', '.agents/skills
 
 Open the folder in Codex. Use `/skills` to find the skill, or mention `$daily-aside` in a prompt. For use across projects, copy to `~/.agents/skills/daily-aside` instead. See [OpenAI's skill guide](https://learn.chatgpt.com/docs/build-skills). The metadata in `agents/openai.yaml` is optional for the core workflow.
 
-Both routes use the same portable SKILL.md, Python scripts, and references. Agent permissions and credential handling depend on the host.
+### ChatGPT dots and the ChatGPT desktop app
+
+This skill was written with a [ChatGPT dot](https://learn.chatgpt.com/docs/dots), and a dot is the natural home for a programme that should simply arrive every morning: it keeps a schedule, has its own cloud computer, and can read sources you have connected. Two routes fit the skill's rules:
+
+- **Connected laptop.** Let the dot use your computer through the ChatGPT desktop app and install the skill locally as above. The TTS command then runs in your own environment through the dot's approval flow, which is the "protected-credential route" SKILL.md allows.
+- **Cloud only.** Package the skill in a plugin together with a TTS connector that holds the key on its side, and use the `prepare` → `reserve` → `import-response` route instead of `google_tts.py`.
+
+In either case the dot still asks, every episode, what personal material to include, and asks again before any of it is sent to a TTS provider. Whether the dot's cloud computer ships ffmpeg has not been confirmed; the connected-laptop route avoids the question. Standalone skills are also available in the ChatGPT desktop app's local chats, which behave like Codex here.
+
+All routes use the same portable SKILL.md, Python scripts, and references. Agent permissions and credential handling depend on the host.
 
 ## Start with a free offline check
 

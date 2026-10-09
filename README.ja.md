@@ -103,7 +103,16 @@ python3 -c "import shutil; shutil.copytree('skills/daily-aside', '.agents/skills
 
 そのフォルダを Codex で開き、`/skills` でスキルを探すか、プロンプトで `$daily-aside` と書きます。複数プロジェクトで使うなら `~/.agents/skills/daily-aside` にコピーしてください。詳細は [OpenAI のスキルガイド](https://learn.chatgpt.com/docs/build-skills)を参照してください。`agents/openai.yaml` のメタデータはコアの動作には必須ではありません。
 
-どちらの経路でも、同じ SKILL.md、Python スクリプト、references を使います。エージェントの権限と認証情報の扱いはホスト環境に依存します。
+### ChatGPT dots と ChatGPT デスクトップアプリ
+
+このスキルは [ChatGPT の dot](https://learn.chatgpt.com/docs/dots) で書かれました。毎朝勝手に届く番組にとって、スケジュール実行ができ、自分のクラウドコンピュータを持ち、連携済みのソースを読める dot は自然な居場所です。スキルのルールに合う経路は 2 つあります。
+
+- **ノート PC を接続する。** ChatGPT デスクトップアプリ経由で dot にあなたの PC を使わせ、上の手順でスキルをローカルに置きます。TTS コマンドは dot の承認フローを通してあなた自身の環境で実行されます。SKILL.md が認める「保護された認証経路」にあたります。
+- **クラウドだけで完結させる。** スキルと、鍵を自分側で保持する TTS コネクタをプラグインにまとめ、`google_tts.py` の代わりに `prepare` → `reserve` → `import-response` の経路を使います。
+
+どちらでも、dot は毎回「個人的な内容を入れるか」を聞き、TTS プロバイダに送る前にもう一度確認します。dot のクラウドコンピュータに ffmpeg が入っているかは未確認です。PC 接続の経路ならその問題は生じません。ChatGPT デスクトップアプリのローカルチャットでもスタンドアロンのスキルが使え、この点では Codex と同じ振る舞いです。
+
+どの経路でも、同じ SKILL.md、Python スクリプト、references を使います。エージェントの権限と認証情報の扱いはホスト環境に依存します。
 
 ## まずは無料のオフラインチェック
 
