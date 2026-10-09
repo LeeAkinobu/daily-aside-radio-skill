@@ -7,7 +7,7 @@
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/LeeAkinobu/daily-aside-radio-skill?color=3a2a22"></a>
   <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white">
   <img alt="ffmpeg" src="https://img.shields.io/badge/ffmpeg-required-007808?logo=ffmpeg&logoColor=white">
-  <img alt="Offline tests" src="https://img.shields.io/badge/offline%20tests-21%20passing-brightgreen">
+  <a href="https://github.com/LeeAkinobu/daily-aside-radio-skill/actions/workflows/offline-tests.yml"><img alt="offline tests" src="https://github.com/LeeAkinobu/daily-aside-radio-skill/actions/workflows/offline-tests.yml/badge.svg"></a>
   <img alt="Claude Code skill" src="https://img.shields.io/badge/Claude%20Code-skill-cc785c">
   <img alt="Codex skill" src="https://img.shields.io/badge/Codex-skill-10a37f">
 </p>
